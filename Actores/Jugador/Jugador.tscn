@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Actores/PersonajeGenerico/PersonajeGenerico.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Actores/Jugador/Jugador.gd" type="Script" id=2]
+[ext_resource path="res://Actores/Jugador/playerShip1_red.png" type="Texture" id=3]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
+
+[node name="Jugador" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+velocidad = 350.0
+
+[node name="Sprite" parent="." index="0"]
+
+texture = ExtResource( 3 )
+
+[node name="FormaCol" parent="." index="1"]
+
+position = Vector2( 0, 6.15413 )
+scale = Vector2( 5.36987, 4.62069 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="FormaCol2" parent="DetectObj" index="0"]
+
+position = Vector2( 0, 6.1789 )
+scale = Vector2( 5.40861, 4.6242 )
+shape = SubResource( 2 )
+
+[node name="Pos" parent="." index="3"]
+
+position = Vector2( 0, -71.5356 )
+
+
