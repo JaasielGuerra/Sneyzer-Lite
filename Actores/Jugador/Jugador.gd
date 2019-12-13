@@ -9,33 +9,35 @@ func _ready():
 
 func _process(delta):
 	
-	dir = Vector2() #reiniciar el vector
+	posicion = Vector2() #reiniciar el vector
 	
+	#comprobando entradas
 	if Input.is_action_pressed("ui_right"):
-		dir.x = 1
+		posicion.x += 1
 	if Input.is_action_pressed("ui_left"):
-		dir.x = -1
+		posicion.x -= 1
 	if Input.is_action_pressed("ui_up"):
-		dir.y = -1
+		posicion.y -= 1
 	if Input.is_action_pressed("ui_down"):
-		dir.y = 1
+		posicion.y += 1
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		var nueva_bala = escena_bala.instance()
-		nueva_bala.global_position = $Pos.global_position
-		get_parent().add_child(nueva_bala)
+		disparo()
 		pass
 	
-	#vector de desplazamiento
-	desplazamiento.x = dir.x * (velocidad * delta)
-	desplazamiento.y = dir.y * (velocidad * delta)
-	desplazamiento.normalized()#normalizar el vector
-	
+	#vector de posicion, se normaliza y se multiplica velocidad y tiempo
+	posicion = posicion.normalized() * velocidad * delta
+		
+	#mover sumandole a su posicion actual el vector de posicion
+	global_position += posicion
+
 	#bloquear el desplazamiento al tamanio de pantalla
 	global_position.x = clamp(global_position.x, 0, t_pantalla.x)
 	global_position.y = clamp(global_position.y, 0, t_pantalla.y)
 	
-	#desplazar
-	move_and_collide(desplazamiento)
-
+#funcion para instanciar disparos
+func disparo():
+	var nueva_bala = escena_bala.instance()
+	nueva_bala.global_position = $PosDisparo.global_position
+	get_parent().add_child(nueva_bala)
 	pass

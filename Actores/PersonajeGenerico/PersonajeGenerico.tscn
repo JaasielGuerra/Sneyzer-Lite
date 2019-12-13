@@ -8,13 +8,16 @@
 custom_solver_bias = 0.0
 extents = Vector2( 46.4809, 36.695 )
 
-[node name="PersonajeGenerico" type="KinematicBody2D"]
+[node name="PersonajeGenerico" type="Area2D"]
 
 position = Vector2( 240, 700 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 velocidad = 0.0
@@ -28,23 +31,9 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="DetectObj" type="Area2D" parent="." index="2"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="FormaCol2" type="CollisionShape2D" parent="DetectObj" index="0"]
-
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Pos" type="Position2D" parent="." index="3"]
+[node name="PosDisparo" type="Position2D" parent="." index="2"]
 
 position = Vector2( 0, -50.9695 )
+_sections_unfolded = [ "Transform" ]
 
 

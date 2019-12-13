@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Actores/PersonajeGenerico/PersonajeGenerico.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Actores/Enemigos/EnemigoUno/EnemigoUno.gd" type="Script" id=2]
+[ext_resource path="res://Actores/Enemigos/EnemigoUno/enemyBlue2.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 40.0
+
+[node name="EnemigoUno" index="0" groups=[
+"enemigosNormales",
+] instance=ExtResource( 1 )]
+
+position = Vector2( 240, 100 )
+script = ExtResource( 2 )
+velocidad = null
+
+[node name="Sprite" parent="." index="0"]
+
+texture = ExtResource( 3 )
+
+[node name="FormaCol" parent="." index="1"]
+
+visible = false
+shape = SubResource( 1 )
+
+[node name="PosDisparo" parent="." index="2"]
+
+position = Vector2( 0, 63.0305 )
+
+

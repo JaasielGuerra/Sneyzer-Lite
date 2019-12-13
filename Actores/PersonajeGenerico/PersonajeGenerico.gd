@@ -1,8 +1,8 @@
-extends KinematicBody2D
+extends Area2D
 
-var dir = Vector2() #para la direccion de la nave
+#var dir = Vector2() #para la direccion de la nave
 export (float) var velocidad #para la velocidad de la nace
-var desplazamiento = Vector2()# vector para el desplazamiento del objeto
+var posicion = Vector2()# vector para manejar la posicion del objeto
 
 #func _ready():
 #	pass

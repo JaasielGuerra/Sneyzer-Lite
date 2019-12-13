@@ -1,15 +1,11 @@
 extends "res://Balas/BalaGenerica/BalaGenerica.gd"
 
-func _ready():
-	dir.y = -1
-	dir.x = 0
-
 func _process(delta):
-	
-	desplazamiento.x = dir.x#movimiento en X cero
-	desplazamiento.y = dir.y * (velocidad * delta)#movimiento en Y
-	
-	move_and_collide(desplazamiento)
-	
 
-	pass
+	posicion.y -= 1 #hacia arriba en Y
+	posicion.x = 0#cero en X
+
+	posicion = posicion.normalized() * velocidad * delta
+
+	#sumar la pos a la posicion actual de la bala
+	global_position += posicion
