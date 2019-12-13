@@ -1,24 +1,23 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Actores/PersonajeGenerico/PersonajeGenerico.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Actores/Enemigos/EnemigoUno/EnemigoUno.gd" type="Script" id=2]
-[ext_resource path="res://Actores/Enemigos/EnemigoUno/enemyBlue2.png" type="Texture" id=3]
+[ext_resource path="res://Actores/Enemigos/EnemigoTres/EnemigoTres.gd" type="Script" id=2]
+[ext_resource path="res://Actores/Enemigos/EnemigoTres/enemyRed3.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 22.0
+radius = 20.0
 
-[node name="EnemigoUno" groups=[
+[node name="EnemigoTres" groups=[
 "enemigosNormales",
 ] instance=ExtResource( 1 )]
 
-position = Vector2( 240, 100 )
 script = ExtResource( 2 )
-velocidad = 10.0
-traslacion = Vector2( -23, -350 )
-intervalo = 25.0
-concavidad = -1
+velocidad = 20.0
+traslacion = Vector2( -12, -225 )
+intervalo = 10.0
+amplitud_curva = 5.0
 
 [node name="Sprite" parent="." index="0"]
 
@@ -32,6 +31,6 @@ shape = SubResource( 1 )
 
 [node name="PosDisparo" parent="." index="2"]
 
-position = Vector2( 0, 63.0305 )
+position = Vector2( 0, 41.017 )
 
 

@@ -21,6 +21,9 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 velocidad = 0.0
+traslacion = Vector2( 0, 0 )
+intervalo = null
+amplitud_curva = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

@@ -1,11 +1,18 @@
 extends "res://Actores/PersonajeGenerico/PersonajeGenerico.gd"
 
-func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+export (int) var concavidad
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+
+	# X va aumenando
+	posicion.x += intervalo * delta
+
+	#se multiplica todo por negativo, ya que el eje Y aca esta invertido
+	posicion.y =  concavidad * (pow(posicion.x + traslacion.x,2) + traslacion.y)#parabola
+
+	global_position.y = posicion.y
+	global_position.x = posicion.x * velocidad
+
+	if (global_position.y <= -270):
+		self.queue_free()#eliminamos la navecita
+		print("se elimino la nave")

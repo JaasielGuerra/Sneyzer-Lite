@@ -22,4 +22,6 @@ shape = SubResource( 1 )
 
 texture = ExtResource( 3 )
 
+[connection signal="area_entered" from="." to="." method="_on_BalaJugador_area_entered"]
+
 

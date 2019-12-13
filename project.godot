@@ -11,6 +11,7 @@ config_version=3
 [application]
 
 config/name="Sneyzer Lite"
+run/main_scene="res://Niveles/Uno/Nivel.tscn"
 config/icon="res://icon.png"
 
 [display]
