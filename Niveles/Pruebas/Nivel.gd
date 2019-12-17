@@ -1,7 +1,6 @@
 extends Node
 
-var ene = load("res://Actores/Enemigos/EnemigoUno/EnemigoUno.tscn")
-var eneDos = load("res://Actores/Enemigos/EnemigoTres/EnemigoTres.tscn")
+var eneDos = load("res://Actores/Enemigos/EnemigoSeis/EnemigoSeis.tscn")
 
 # class member variables go here, for example:
 # var a = 2
@@ -18,13 +17,5 @@ func _ready():
 #	pass
 
 func _on_Timer_timeout():
-
-	var nuevo_ene = ene.instance()
-	get_parent().add_child(nuevo_ene)
-
-	pass
-
-func _on_Timer2_timeout():
 	var nuevo_ene = eneDos.instance()
 	get_parent().add_child(nuevo_ene)
-	pass

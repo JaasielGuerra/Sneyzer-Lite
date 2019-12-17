@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Niveles/Uno/Nivel.gd" type="Script" id=1]
+[ext_resource path="res://Niveles/Pruebas/Nivel.gd" type="Script" id=1]
 [ext_resource path="res://Actores/Jugador/Jugador.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Niveles/Uno/ParallaxBackground.gd" type="Script" id=3]
-[ext_resource path="res://Niveles/Uno/blue.png" type="Texture" id=4]
+[ext_resource path="res://Niveles/Pruebas/ParallaxBackground.gd" type="Script" id=3]
+[ext_resource path="res://Niveles/Pruebas/blue.png" type="Texture" id=4]
 
-[node name="Nivel" type="Node" index="0"]
+[node name="EscenaDePruebas" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -47,19 +47,10 @@ _sections_unfolded = [ "Transform" ]
 [node name="Timer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 0.5
+wait_time = 0.8
 one_shot = false
 autostart = true
 
-[node name="Timer2" type="Timer" parent="." index="3"]
-
-process_mode = 1
-wait_time = 0.5
-one_shot = false
-autostart = false
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-
-[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 
 

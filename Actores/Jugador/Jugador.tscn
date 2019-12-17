@@ -12,7 +12,7 @@ points = PoolVector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
 [node name="Jugador" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
-velocidad = 350.0
+velocidad = 400.0
 
 [node name="Sprite" parent="." index="0"]
 
@@ -28,6 +28,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PosDisparo" parent="." index="2"]
 
-position = Vector2( 0, -70.8722 )
+position = Vector2( 0, -45 )
 
 

@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 4.51144, 26.783 )
+extents = Vector2( 2.18552, 13.4111 )
 
 [node name="BalaJugador" instance=ExtResource( 1 )]
 
@@ -20,7 +20,9 @@ shape = SubResource( 1 )
 
 [node name="Sprite" parent="." index="1"]
 
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="area_entered" from="." to="." method="_on_BalaJugador_area_entered"]
 

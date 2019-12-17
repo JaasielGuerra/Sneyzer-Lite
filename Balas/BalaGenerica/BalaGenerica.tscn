@@ -19,7 +19,6 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-velocidad = null
 
 [node name="FormCol" type="CollisionShape2D" parent="." index="0"]
 
@@ -29,10 +28,10 @@ shape = SubResource( 1 )
 
 texture = ExtResource( 2 )
 
-[node name="Visibilidad" type="VisibilityNotifier2D" parent="." index="2"]
+[node name="Destruir_bala" type="VisibilityNotifier2D" parent="." index="2"]
 
 rect = Rect2( -10, -10, 20, 20 )
 
-[connection signal="screen_exited" from="Visibilidad" to="." method="_on_Visibilidad_screen_exited"]
+[connection signal="screen_exited" from="Destruir_bala" to="." method="_on_Visibilidad_screen_exited"]
 
 

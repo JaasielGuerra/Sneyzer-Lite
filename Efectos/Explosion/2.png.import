@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue.png-ceb2c68778900f91203a843a24b0cee7.stex"
+path="res://.import/2.png-4b4e02d5c257cf0bff37c052a57a8ec3.stex"
 
 [deps]
 
-source_file="res://Niveles/Uno/blue.png"
-dest_files=[ "res://.import/blue.png-ceb2c68778900f91203a843a24b0cee7.stex" ]
+source_file="res://Efectos/Explosion/2.png"
+dest_files=[ "res://.import/2.png-4b4e02d5c257cf0bff37c052a57a8ec3.stex" ]
 
 [params]
 
