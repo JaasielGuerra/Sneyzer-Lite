@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/laserBlue03.png-03f803517227558f388509a053e23fb6.stex"
+path="res://.import/blue.jpg-6711590ce5750e3fe0c507b4b00b8ca7.stex"
 
 [deps]
 
-source_file="res://Balas/BalaGenerica/laserBlue03.png"
-dest_files=[ "res://.import/laserBlue03.png-03f803517227558f388509a053e23fb6.stex" ]
+source_file="res://Escenario/Espacio/blue.jpg"
+dest_files=[ "res://.import/blue.jpg-6711590ce5750e3fe0c507b4b00b8ca7.stex" ]
 
 [params]
 

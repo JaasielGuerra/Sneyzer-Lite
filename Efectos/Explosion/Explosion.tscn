@@ -20,7 +20,7 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[node name="Explosion" type="Node2D" index="0"]
+[node name="Explosion" type="Node2D"]
 
 position = Vector2( 232.895, 150.76 )
 script = ExtResource( 1 )

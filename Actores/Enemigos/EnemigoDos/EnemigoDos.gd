@@ -1,4 +1,4 @@
-extends "res://Actores/PersonajeGenerico/PersonajeGenerico.gd"
+extends "res://Actores/PersonajeGenerico/EnemigoPequenio/Enemigo.gd"
 
 func _ready():
 	

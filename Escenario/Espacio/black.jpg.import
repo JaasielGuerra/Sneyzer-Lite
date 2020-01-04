@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/laserGreen14.png-8524f9f4771992ea92948f8ed9255688.stex"
+path="res://.import/black.jpg-cdb0cc7e87c3eb717692fd39a932de7f.stex"
 
 [deps]
 
-source_file="res://Balas/BalaEnemigo/laserGreen14.png"
-dest_files=[ "res://.import/laserGreen14.png-8524f9f4771992ea92948f8ed9255688.stex" ]
+source_file="res://Escenario/Espacio/black.jpg"
+dest_files=[ "res://.import/black.jpg-cdb0cc7e87c3eb717692fd39a932de7f.stex" ]
 
 [params]
 

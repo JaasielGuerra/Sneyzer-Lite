@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue.png-6b614e32e95faa97df92105d8fc0d083.stex"
+path="res://.import/darkPurple.jpg-5e1fc01dd2b83ed0bffb9038b3f1ad11.stex"
 
 [deps]
 
-source_file="res://Niveles/Pruebas/blue.png"
-dest_files=[ "res://.import/blue.png-6b614e32e95faa97df92105d8fc0d083.stex" ]
+source_file="res://Escenario/Espacio/darkPurple.jpg"
+dest_files=[ "res://.import/darkPurple.jpg-5e1fc01dd2b83ed0bffb9038b3f1ad11.stex" ]
 
 [params]
 

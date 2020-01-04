@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Escenario/Espacio/FondoEspacio.gd" type="Script" id=1]
+[ext_resource path="res://Escenario/Espacio/black.jpg" type="Texture" id=2]
+
+[node name="FondoEspacio" type="ParallaxBackground"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+script = ExtResource( 1 )
+_sections_unfolded = [ "Scroll" ]
+velocidad = 1
+fondo = 1
+
+[node name="Capa0" type="ParallaxLayer" parent="." index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 800 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="Capa0" index="0"]
+
+position = Vector2( 240, 400 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+

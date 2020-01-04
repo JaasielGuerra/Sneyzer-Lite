@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/playerShip1_blue.png-d2a89c4a5ab73c7df4affa7cbc7c3557.stex"
+path="res://.import/star2.png-678c974fda1ca6903afb7d37aac17d3e.stex"
 
 [deps]
 
-source_file="res://Actores/PersonajeGenerico/playerShip1_blue.png"
-dest_files=[ "res://.import/playerShip1_blue.png-d2a89c4a5ab73c7df4affa7cbc7c3557.stex" ]
+source_file="res://Escenario/Estrella/star2.png"
+dest_files=[ "res://.import/star2.png-678c974fda1ca6903afb7d37aac17d3e.stex" ]
 
 [params]
 
