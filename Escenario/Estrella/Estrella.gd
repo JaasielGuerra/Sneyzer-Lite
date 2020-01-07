@@ -4,6 +4,7 @@ var velocidad
 
 func _ready():
 	velocidad = rand_range(100, 250)
+	randomize()
 
 func _process(delta):
 	global_position += Vector2(0, velocidad * delta)

@@ -8,10 +8,10 @@ export (float) var intervalo# para los intervalor  de la funion
 export (float) var amplitud_curva# para la amplitud de la curva
 var escena_exp = load("res://Efectos/Explosion/Explosion.tscn")
 
-#comprobar si la colision es de la bala del jugador para destruirlo
+#comprobar si la colision es de la bala del jugador o el jugador para destruirlo
 func _on_Enemigo_area_entered(area):
 
-    if area.is_in_group("BalaJugador"):
+    if area.is_in_group("BalaJugador") or area.get_name() == "Jugador":
 
         var nueva_exp = escena_exp.instance()
         nueva_exp.global_position = global_position

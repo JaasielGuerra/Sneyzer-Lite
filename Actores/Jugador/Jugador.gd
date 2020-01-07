@@ -1,19 +1,22 @@
- extends Area2D
+extends Area2D
 
 var escena_bala = load("res://Actores/Balas/BalaJugador/BalaJugador.tscn")
 var escena_exp = load("res://Efectos/Explosion/Explosion.tscn")
 var t_pantalla
 var posicion = Vector2()
-export (float) var velocidad
 var vida = 3
-var danio = 0
+
+export (float) var velocidad
 
 func _ready():
 	t_pantalla = get_viewport().size#tamnio de pantalla
-	global_position = Vector2(480/2,700)
+	set_process(false) #desactivar al inciio el procesamiento
+	aparecer()
+	randomize()
+	$Protec.hide()
 
 func _process(delta):
-
+	
 	posicion = Vector2() #reiniciar el vector
 	#comprobando entradas
 	if Input.is_action_pressed("ui_right"):
@@ -26,11 +29,10 @@ func _process(delta):
 		posicion.y += 1
 	if Input.is_action_just_pressed("ui_accept"):
 		disparo()
-		pass
 	
 	#vector de posicion, se normaliza y se multiplica velocidad y tiempo
 	posicion = posicion.normalized() * velocidad * delta
-		
+	
 	#mover sumandole a su posicion actual el vector de posicion
 	global_position += posicion
 
@@ -48,24 +50,38 @@ func disparo():
 	nueva_bala.velocidad = 950
 	get_parent().add_child(nueva_bala)
 
-#destruir la nave
+#senial de Area2D cuanto algo colisiona con la nave
 func _on_Jugador_area_entered(area):
+	if area.is_in_group("BalaEnemigo") or area.is_in_group("Enemigo"):
+		vida -= 1 #restar vida
+		set_process(false) #desactivar el procesamiento
+		$FormaCol.disabled = true #descativar deteccion de colision
+		$Protec.show()#mostrar el sprite de proteccion
+		$Protec/Anim.play("anim")
+		$Inmunidad.start()#iniciar timer
+		aparecer()
+		for i in range(0,3):
+			var nueva_exp  = escena_exp.instance()
+			nueva_exp.global_position = Vector2(
+				global_position.x + rand_range(-35,35), 
+				global_position.y + rand_range(-35,35))
+			get_parent().add_child(nueva_exp)
 
-	if area.is_in_group("BalaEnemigo"):
+		if vida == 0:
+			queue_free()#eliminar la nave
 
-		if danio < 3:
-			danio += 1#aumentar danio de la nave
-			vida -= 1#bajar vida
-			$Danio.texture = load("res://Actores/Jugador/playerShip1_damage"+str(danio)+".png")
+#hace aparecer a la nave
+func aparecer():
+	#animando con el nodo Tween
+	$Aparecer.interpolate_property(self, "global_position", Vector2(t_pantalla.x/2, t_pantalla.y + 150), Vector2(t_pantalla.x/2, t_pantalla.y - 150) , 1, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	$Aparecer.start()
 
-		elif vida == 0:
-			
-			for i in range(0,5):
-				var nueva_exp  = escena_exp.instance()
-				nueva_exp.global_position = Vector2(
-					global_position.x + rand_range(-45,45), 
-					global_position.y + rand_range(-45,45))
-				get_parent().add_child(nueva_exp)
-			
-			queue_free()
+#senial del nodo Tween cuando se finaliza la animacion
+func _on_Aparecer_tween_completed(object, key):
+	set_process(true) #activar el procesamiento
 
+#cuando termina el tiempo de inmunidad
+func _on_Inmunidad_timeout():
+	$FormaCol.disabled = false #volver a activar la deteccion de colision
+	$Protec.hide()#ocultar el sprite de proteccion
+	$Protec/Anim.stop()

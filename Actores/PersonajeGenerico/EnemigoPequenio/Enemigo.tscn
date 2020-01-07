@@ -8,7 +8,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 46.4809, 36.695 )
 
-[node name="Enemigo" type="Area2D"]
+[node name="Enemigo" type="Area2D" groups=[
+"Enemigo",
+]]
 
 position = Vector2( 240, 700 )
 input_pickable = true
