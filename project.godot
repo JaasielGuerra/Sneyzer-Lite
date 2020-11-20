@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Sneyzer Lite"
-run/main_scene="res://Niveles/Pruebas/EscenaDePruebas.tscn"
+run/main_scene="res://Niveles/Principal/Juego.tscn"
 config/icon="res://icon.png"
 
 [autoload]

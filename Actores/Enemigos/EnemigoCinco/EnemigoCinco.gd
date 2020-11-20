@@ -7,8 +7,9 @@ var dir_x = 0
 var img = ["ufoBlue","ufoGreen","ufoRed","ufoYellow"]
 
 func _ready():
+	randomize()
 	global_position = Vector2(480/2,-50)
-	dir_x = rand_range(-1, 1)
+	dir_x = rand_range(-0.75, 0.75)
 	$Sprite.texture = load("res://Actores/Enemigos/EnemigoCinco/"+str(img[rand_range(0,3)])+".png")
 
 func _process(delta):
@@ -22,7 +23,7 @@ func _process(delta):
 		print("se elimino la navecita")
 
 	contador += 1
-	if  contador == 60 and puede_disparar == false:
+	if  contador == 80 and puede_disparar == false:
 		puede_disparar = true
 		contador = 0
 

@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 radius = 20.0
 
-[node name="EnemigoCinco" index="0" instance=ExtResource( 1 )]
+[node name="EnemigoCinco" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 velocidad = 180.0

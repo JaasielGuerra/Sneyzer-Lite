@@ -3,8 +3,8 @@ extends Node2D
 var velocidad
 
 func _ready():
-	velocidad = rand_range(100, 250)
 	randomize()
+	velocidad = rand_range(100, 250)
 
 func _process(delta):
 	global_position += Vector2(0, velocidad * delta)

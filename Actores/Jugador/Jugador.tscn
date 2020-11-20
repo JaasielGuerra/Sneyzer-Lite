@@ -39,7 +39,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Jugador" type="Area2D" index="0"]
+[node name="Jugador" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -80,6 +80,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Protec" type="Sprite" parent="." index="4"]
 
+editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.333333 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 5 )
@@ -108,7 +109,7 @@ playback/speed = 1.0
 [node name="Inmunidad" type="Timer" parent="." index="6"]
 
 process_mode = 1
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 autostart = false
 
